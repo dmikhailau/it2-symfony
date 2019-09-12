@@ -42,6 +42,8 @@ class Users
      */
     private $parentid;
 
+
+
     /**
      * @var Roles
      *
@@ -93,7 +95,7 @@ class Users
         return $this;
     }
 
-    public function getRoleid(): ?Roles 
+    public function getRoleid(): ?Roles
     {
         return $this->roleid;
     }
