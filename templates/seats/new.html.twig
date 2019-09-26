@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block form_label_class -%}
+    col-sm-3
+{%- endblock form_label_class %}
+
+
+{% block title %}New Seats{% endblock %}
+
+{% block body %}
+    <h1>Create new Seats</h1>
+
+    {{ include('seats/_form.html.twig') }}
+
+    <a href="{{ path('seats_index') }}">back to list</a>
+{% endblock %}

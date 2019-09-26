@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SeatTypes index{% endblock %}
+
+{% block body %}
+    <h1>SeatTypes index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Code</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seat_type in seat_types %}
+            <tr>
+                <td>{{ seat_type.id }}</td>
+                <td>{{ seat_type.title }}</td>
+                <td>{{ seat_type.code }}</td>
+                <td>
+                    <a href="{{ path('seat_types_show', {'id': seat_type.id}) }}">show</a>
+                    <a href="{{ path('seat_types_edit', {'id': seat_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('seat_types_new') }}">Create new</a>
+{% endblock %}

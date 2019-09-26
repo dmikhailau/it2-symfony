@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Registration{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="registration row justify-content-center">
+        <h1>Registration</h1>
+        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+            {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+            {{ form_widget(form) }}
+            <div class="form-group row">
+                    <div class="col-sm-8">
+                    <button type="submit" class="btn btn-block btn-success">Register</button>
+                </div>
+            </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            alert('Jquery works');
+        });</script>
+{% endblock %}

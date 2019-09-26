@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Halls index{% endblock %}
+
+{% block body %}
+    <h1>Halls index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Address</th>
+                <th>Createdts</th>
+                <th>Updatedts</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hall in halls %}
+            <tr>
+                <td>{{ hall.id }}</td>
+                <td>{{ hall.title }}</td>
+                <td>{{ hall.address }}</td>
+                <td>{{ hall.createdts ? hall.createdts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ hall.updatedts ? hall.updatedts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('halls_show', {'id': hall.id}) }}">show</a>
+                    <a href="{{ path('halls_edit', {'id': hall.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('halls_new') }}">Create new</a>
+{% endblock %}

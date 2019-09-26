@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Seats index{% endblock %}
+
+{% block body %}
+    <h1>Seats index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Number</th>
+                <th>Createdts</th>
+                <th>Updatedts</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seat in seats %}
+            <tr>
+                <td>{{ seat.id }}</td>
+                <td>{{ seat.number }}</td>
+                <td>{{ seat.createdts ? seat.createdts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ seat.updatedts ? seat.updatedts|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('seats_show', {'id': seat.id}) }}">show</a>
+                    <a href="{{ path('seats_edit', {'id': seat.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('seats_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Confirmation{% endblock %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <p>Dear {{ user.username }}.</p>
+    <p>Welcome to test project</p>
+    <p>Your account has been activated. You can start using the platform.</p>
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+{% endblock %}
