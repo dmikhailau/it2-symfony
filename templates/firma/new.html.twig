@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Firma{% endblock %}
+
+{% block body %}
+    <h1>Create new Firma</h1>
+
+    {{ include('firma/_form.html.twig') }}
+
+    <a href="{{ path('firma_index') }}">back to list</a>
+{% endblock %}

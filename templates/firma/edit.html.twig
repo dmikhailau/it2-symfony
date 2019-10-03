@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Firma{% endblock %}
+
+{% block body %}
+    <h1>Edit Firma</h1>
+
+    {{ include('firma/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('firma_index') }}">back to list</a>
+
+    {{ include('firma/_delete_form.html.twig') }}
+{% endblock %}

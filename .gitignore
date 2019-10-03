@@ -1,4 +1,7 @@
 
+
+
+
 ###> symfony/framework-bundle ###
 /.env.local
 /.env.local.php
@@ -19,3 +22,5 @@
 ###< symfony/web-server-bundle ###
 1/
 .idea/
+node_modules/
+public/build

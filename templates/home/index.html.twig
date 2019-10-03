@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    //header
+    <header>
+        <div class="row">
+            <div class="col logo ">
+                {#<img src="{{ asset('') }}" alt="">#}
+            </div>
+            <div class="col">
+                <ul>
+                    <li>пн - пт: 10 - 24</li>
+                    <li>сб - вс: 10 - 02</li>
+                </ul>
+            </div>
+            <div class="col">
+                <form action="/login">
+                    {#TODO ппроверка зашел пользователь или нет#}
+                    <input type="text" name="email">
+                    <input type="password" name="pass">
+                    <button>Login</button>
+                    {#TODO Если зашел то ссылка на профиль и кнопка выход#}
+                </form>
+            </div>
+        </div>
+        {#TODO ADD MENU#}
+    </header>
+    //content
+    <div class="row">
+        <div class="col-md-4 sidebar">
+            {#TODO add film list #}
+            <ul>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+                <li>Films</li>
+            </ul>
+        </div>
+        <div class="col-md-8 mainContent">
+            {#TODO add film list #}
+            <div class="row">
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        {#<a href="{{ path('film_show', {'id': film.id }) }}">{{ film.title }}</a>#}
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+                <div class="col-4 film">
+                    <div class="film__image">
+                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                    </div>
+                    <div class="film__title">
+                        Форсаж
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    //footer
+</div>
+{% endblock %}
