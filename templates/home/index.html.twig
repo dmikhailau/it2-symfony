@@ -45,68 +45,111 @@
             </ul>
         </div>
         <div class="col-md-8 mainContent">
-            {#TODO add film list #}
             <div class="row">
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+                <button class="seatHide">hide</button>
+                <button class="seatShow">show</button>
+                <button class="seatRemove">remove</button>
+            </div>
+            <div id="hallPreview" >
+                <div class="row row-0" data-row="0">
+                    <div class="input-group-prepend">
+                        <button class="addSeat btn btn-success btn-outline-secondary" data-row="0" data-max-y="5">Add Seat</button>
                     </div>
-                    <div class="film__title">
-                        {#<a href="{{ path('film_show', {'id': film.id }) }}">{{ film.title }}</a>#}
+                    <div class="row rowContent">
+                        <div class="col seat" data-x="1" data-y="1" data-type="1">1,1</div>
+                        <div class="col seat" data-x="1" data-y="2" data-type="1">1,2</div>
+                        <div class="col seat" data-x="1" data-y="3" data-type="1">1,3</div>
+                        <div class="col seat" data-x="1" data-y="4" data-type="1">1,4</div>
+                        <div class="col seat" data-x="1" data-y="5" data-type="1">1,5</div>
                     </div>
-                </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
-                    </div>
-                    <div class="film__title">
-                        Форсаж
-                    </div>
-                </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
-                    </div>
-                    <div class="film__title">
-                        Форсаж
+                    <div class="input-group-append">
+                        <button class="removeRow btn btn-danger btn-outline-secondary" data-row="0">Remove Row</button>
                     </div>
                 </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
+            </div>
+
+            <div class="buttons">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <button id='addRow' data-current='0' class="btn btn-outline-secondary" type="button">Add row</button>
                     </div>
-                    <div class="film__title">
-                        Форсаж
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Col count</span>
                     </div>
-                </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
-                    </div>
-                    <div class="film__title">
-                        Форсаж
-                    </div>
-                </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
-                    </div>
-                    <div class="film__title">
-                        Форсаж
-                    </div>
-                </div>
-                <div class="col-4 film">
-                    <div class="film__image">
-                        <img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">
-                    </div>
-                    <div class="film__title">
-                        Форсаж
-                    </div>
+                    <input type="text" aria-describedby="basic-addon1" aria-label="colCount" class="form-control" id="colCount" value="10">
+
+                    <select id="rowType" class="custom-select">
+                        <option value="1">Обычные</option>
+                        <option value="2">Повышенной комфортности</option>
+                        <option value="3">ВИП</option>
+                    </select>
                 </div>
 
             </div>
         </div>
-    </div>
+        {#<div class="col-md-8 mainContent">#}
+            {#TODO add film list #}
+            {#<div class="row">#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#<a href="{{ path('film_show', {'id': film.id }) }}">{{ film.title }}</a>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="col-4 film">#}
+                    {#<div class="film__image">#}
+                        {#<img  class="img-fluid" src="{{ asset('uploads/films/default.jpg') }}" alt="">#}
+                    {#</div>#}
+                    {#<div class="film__title">#}
+                        {#Форсаж#}
+                    {#</div>#}
+                {#</div>#}
+
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
 
     //footer
 </div>

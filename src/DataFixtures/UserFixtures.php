@@ -35,14 +35,10 @@ public function load(ObjectManager $manager)
                 $hall
                     ->setTitle($this->getRandom($title))
                     ->setAddress($this->getRandom($address));
-
+//
                 $manager->persist($hall);
                 $manager->flush();
             }
-
-
-
-
 
             $user->setEmail('test@test.com');
             $user->setPassword($this->passwordEncoder->encodePassword(

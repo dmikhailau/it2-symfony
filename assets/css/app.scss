@@ -6,3 +6,20 @@ body {
     background-color: lightgray;
     font-size: 23px;
 }
+
+#hallPreview {
+    background-color: lightgreen;
+  margin-bottom: 20px;
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+.seat {
+  background-color: #AA3333;
+  padding: 5px;
+  margin: 5px;
+  max-height: 40px;
+  max-width: 40px;
+}

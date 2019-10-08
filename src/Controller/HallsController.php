@@ -57,7 +57,7 @@ class HallsController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="halls_show", methods={"GET"})
+     * @Route("/hall/{id}", name="halls_show", methods={"GET"})
      */
     public function show(Halls $hall): Response
     {
