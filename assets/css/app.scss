@@ -17,9 +17,23 @@ body {
   }
 }
 .seat {
-  background-color: #AA3333;
+
   padding: 5px;
   margin: 5px;
   max-height: 40px;
   max-width: 40px;
+
+  &.close{
+    background-color: black;
+  }
+
+  &.open{
+    background-color: #0daa26;
+  }
+  &.reserved {
+    background-color: #aa3f0b;
+  }
+  &.reservation{
+    background-color: #5eb5e0;
+  }
 }

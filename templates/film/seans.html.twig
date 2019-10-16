@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ seans.film.title }}{% endblock %}
+
+{% block body %}
+
+<div class="container">
+{{ dump(seans) }}
+
+
+    //seas header
+    <div> Seans {{ seans.date|date('m.d h:i') }}</div>
+        //film info
+        //seans info
+        //hall info
+    //hall container
+        //seats
+    <div id="seansPreview" >
+        {% for row in seans.hall.rows %}
+            <div class="row row-{{ row.id }}">
+                <div class="row rowContent">
+                    {% for seat in row.seats %}
+                        <div
+                                class="col seat seat{{ seat.x ~ seat.y }} {{ seatStates[seat.state] }}"
+                                data-state="{{ seatStates[seat.state] }}"
+                                data-x="{{ seat.x }}"
+                                data-y="{{ seat.y }}"
+                                data-type="{{ seans.price[row.type] }}">
+                            {{ seat.x }}{{ seat.y }}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+{% endblock %}
